@@ -31,7 +31,9 @@ class FragmentMainScreen : Fragment(R.layout.fragment_main_screen) {
             listOf(
                 CategoryElement.Header(0, "Каталог", R.drawable.ic_baseline_list_24),
                 CategoryElement.Category(1, "Сад", R.drawable.bush),
-                CategoryElement.Category(2, "Освещение", R.drawable.bush)
+                CategoryElement.Category(2, "Освещение", R.drawable.lamp),
+                CategoryElement.Category(2, "Инструменты", R.drawable.harp),
+                CategoryElement.Category(3, "Стройматериалы", R.drawable.brick),
             )
         )
 

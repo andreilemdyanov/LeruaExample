@@ -14,4 +14,10 @@ sealed class CategoryElement {
         val title: String,
         val image: Int,
     ) : CategoryElement()
+
+    data class Footer(
+        override val id: Int,
+        val title: String,
+        val image: Int,
+    ) : CategoryElement()
 }

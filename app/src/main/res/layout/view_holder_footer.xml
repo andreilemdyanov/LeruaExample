@@ -18,23 +18,34 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:src="@tools:sample/avatars" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/green"
+        android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toTopOf="@id/tv_category_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:tint="@color/white" />
+
     <TextView
         android:id="@+id/tv_category_title"
-        style="@style/CategoryTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:fontFamily="@font/roboto_medium"
+        android:lines="1"
+        android:maxLines="1"
+        android:text="@string/see_all"
         android:textColor="@color/black"
+        android:textSize="@dimen/extra_small_text"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/iv_background"
         app:layout_constraintStart_toStartOf="@+id/iv_background"
-        app:layout_constraintTop_toTopOf="@+id/iv_background"
-        tools:text="@tools:sample/full_names" />
-
-    <ImageView
-        android:id="@+id/iv_category_image"
-        android:layout_width="@dimen/category_image_size"
-        android:layout_height="@dimen/category_image_size"
-        android:scaleType="centerInside"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:src="@tools:sample/avatars" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_next" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

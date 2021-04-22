@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import coil.transform.RoundedCornersTransformation
 import ru.work.leruaexample.R
 
 class CategoriesAdapter(
@@ -24,9 +25,16 @@ class CategoriesAdapter(
                     false
                 )
             )
-            Type.MOVIE.ordinal -> ViewHolder.Category(
+            Type.CATEGORY.ordinal -> ViewHolder.Category(
                 inflater.inflate(
                     R.layout.view_holder_category,
+                    parent,
+                    false
+                )
+            )
+            Type.FOOTER.ordinal -> ViewHolder.Footer(
+                inflater.inflate(
+                    R.layout.view_holder_footer,
                     parent,
                     false
                 )
@@ -44,19 +52,22 @@ class CategoriesAdapter(
 //                    clickListener.onClick(getItem(position))
 //                }
             }
+            is ViewHolder.Footer -> holder.bind()
         }
     }
 
     override fun getItemViewType(position: Int): Int {
         return when (position) {
             0 -> Type.HEADER.ordinal
-            else -> Type.MOVIE.ordinal
+            itemCount-1 -> Type.FOOTER.ordinal
+            else -> Type.CATEGORY.ordinal
         }
     }
 
     enum class Type {
         HEADER,
-        MOVIE
+        CATEGORY,
+        FOOTER
     }
 
     interface OnRecyclerMovieClicked {
@@ -94,6 +105,21 @@ sealed class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 //                crossfade(true)
 //            }
             title.text = "Каталог"
+        }
+    }
+
+    class Footer(itemView: View) : ViewHolder(itemView) {
+        private val image = itemView.findViewById<ImageView>(R.id.btn_next)
+        private val title = itemView.findViewById<TextView>(R.id.tv_category_title)
+
+        fun bind() {
+//            image.setImageResource(R.drawable.ic_baseline_list_24)
+//            image.load(R.drawable.green_rect){
+//                transformations(RoundedCornersTransformation())
+//                error(R.drawable.ic_baseline_error_24)
+//                crossfade(true)
+//            }
+            title.text = "Смотреть всё"
         }
     }
 }
