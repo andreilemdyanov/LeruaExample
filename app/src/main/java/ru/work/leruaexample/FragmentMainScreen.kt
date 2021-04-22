@@ -70,7 +70,7 @@ class FragmentMainScreen : Fragment(R.layout.fragment_main_screen),
         val cw = context.getColor(android.R.color.white)
 
         colorAnim = ValueAnimator.ofArgb(cw, ca)
-        colorAnim.addUpdateListener { binding.toolbar.setBackgroundColor(it.animatedValue as Int) }
+//        colorAnim.addUpdateListener { binding.ivBackHeader.setBackgroundColor(it.animatedValue as Int) }
 
         super.onAttach(context)
     }
@@ -133,7 +133,7 @@ class FragmentMainScreen : Fragment(R.layout.fragment_main_screen),
                 )
             )
             bestPriceAdapter.submitList(bestPriceList)
-            appBar.addOnOffsetChangedListener(this@FragmentMainScreen)
+//            appBar.addOnOffsetChangedListener(this@FragmentMainScreen)
         }
     }
 
@@ -146,20 +146,20 @@ class FragmentMainScreen : Fragment(R.layout.fragment_main_screen),
         if (currentScrollPercentage >= PERCENTAGE_TO_START) {
             if (!mIsImageHidden) {
                 mIsImageHidden = true
-                ViewCompat.animate(binding.btnBarcode).alpha(0f).start()
-                ViewCompat.animate(binding.appBar).alpha(0f).start()
-                colorAnim.reverse()
-                ViewCompat.animate(binding.constraintLayout).translationX(-30f)
+//                ViewCompat.animate(binding.btnBarcode).alpha(0f).start()
+//                ViewCompat.animate(binding.appBar).alpha(0f).start()
+//                colorAnim.reverse()
+//                ViewCompat.animate(binding.constraintLayout).translationX(-30f)
             }
         }
 
         if (currentScrollPercentage < PERCENTAGE_TO_START) {
             if (mIsImageHidden) {
                 mIsImageHidden = false
-                ViewCompat.animate(binding.btnBarcode).alpha(1f).start()
-                ViewCompat.animate(binding.appBar).alpha(1f).start()
-                colorAnim.start()
-                ViewCompat.animate(binding.constraintLayout).translationX(0f)
+//                ViewCompat.animate(binding.btnBarcode).alpha(1f).start()
+//                ViewCompat.animate(binding.appBar).alpha(1f).start()
+//                colorAnim.start()
+//                ViewCompat.animate(binding.constraintLayout).translationX(0f)
             }
         }
     }
