@@ -39,19 +39,28 @@ class FragmentMainScreen : Fragment(R.layout.fragment_main_screen) {
 
         earlySeenList.addAll(
             listOf(
+                Item(0, "413 ₽/шт.", "Штукатурка гипсовая Волма Слой 30 кг", R.drawable.volma),
+                Item(1, "143 ₽/шт.", "Пескобетон Axton 30 кг", R.drawable.peskobeton),
+                Item(2, "2383 ₽/шт.", "Тачка садовая одноколесная 200 кг/90 л", R.drawable.telega),
                 Item(
-                    0,
+                    3,
                     "930,60 ₽/кор.",
                     "Ламинат Artens «Тангай» 33 класс толщина 8 мм",
                     R.drawable.artens_1
                 ),
                 Item(
-                    1,
+                    4,
                     "899,21 ₽/кор.",
                     "Ламинат Artens «Ленасиа» 33 класс толщина 8 мм",
                     R.drawable.artens_2
                 ),
-                Item(2, "413 ₽/шт.", "Штукатурка гипсовая Волма Слой 30 кг", R.drawable.volma)
+                Item(5, "122 ₽/шт.", "Салфетка, 35x35 см, микрофибра, 4 шт.", R.drawable.salfetka),
+                Item(
+                    6,
+                    "316 ₽/шт.",
+                    "Подушка «Бархат», 40х40 см, цвет жёлтый",
+                    R.drawable.podushka
+                ),
             )
         )
 
@@ -59,17 +68,26 @@ class FragmentMainScreen : Fragment(R.layout.fragment_main_screen) {
             listOf(
                 Item(
                     0,
-                    "930,60 ₽/кор.",
-                    "Ламинат Artens «Тангай» 33 класс толщина 8 мм",
-                    R.drawable.artens_1
+                    "316 ₽/шт.",
+                    "Подушка «Бархат», 40х40 см, цвет жёлтый",
+                    R.drawable.podushka
                 ),
+                Item(1, "122 ₽/шт.", "Салфетка, 35x35 см, микрофибра, 4 шт.", R.drawable.salfetka),
                 Item(
-                    1,
+                    2,
                     "899,21 ₽/кор.",
                     "Ламинат Artens «Ленасиа» 33 класс толщина 8 мм",
                     R.drawable.artens_2
                 ),
-                Item(2, "413 ₽/шт.", "Штукатурка гипсовая Волма Слой 30 кг", R.drawable.volma)
+                Item(3, "2383 ₽/шт.", "Тачка садовая одноколесная 200 кг/90 л", R.drawable.telega),
+                Item(
+                    4,
+                    "930,60 ₽/кор.",
+                    "Ламинат Artens «Тангай» 33 класс толщина 8 мм",
+                    R.drawable.artens_1
+                ),
+                Item(5, "413 ₽/шт.", "Штукатурка гипсовая Волма Слой 30 кг", R.drawable.volma),
+                Item(6, "143 ₽/шт.", "Пескобетон Axton 30 кг", R.drawable.peskobeton),
             )
         )
 
@@ -87,7 +105,16 @@ class FragmentMainScreen : Fragment(R.layout.fragment_main_screen) {
                     "Ламинат Artens «Ленасиа» 33 класс толщина 8 мм",
                     R.drawable.artens_2
                 ),
-                Item(2, "413 ₽/шт.", "Штукатурка гипсовая Волма Слой 30 кг", R.drawable.volma)
+                Item(2, "413 ₽/шт.", "Штукатурка гипсовая Волма Слой 30 кг", R.drawable.volma),
+                Item(3, "122 ₽/шт.", "Салфетка, 35x35 см, микрофибра, 4 шт.", R.drawable.salfetka),
+                Item(4, "143 ₽/шт.", "Пескобетон Axton 30 кг", R.drawable.peskobeton),
+                Item(
+                    5,
+                    "316 ₽/шт.",
+                    "Подушка «Бархат», 40х40 см, цвет жёлтый",
+                    R.drawable.podushka
+                ),
+                Item(6, "2383 ₽/шт.", "Тачка садовая одноколесная 200 кг/90 л", R.drawable.telega),
             )
         )
     }
