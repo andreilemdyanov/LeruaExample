@@ -1,4 +1,4 @@
-package ru.work.leruaexample
+package ru.work.leruaexample.data.item
 
 data class Item(
     val id: Int,

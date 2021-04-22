@@ -2,4 +2,8 @@
     <string name="app_name">LeruaExample</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="early_seen">Недавно просмотренные</string>
+    <string name="limited_offer">Предложение ограничено</string>
+    <string name="best_price">Лучшая цена</string>
+    <string name="search_items">Поиск товаров</string>
 </resources>

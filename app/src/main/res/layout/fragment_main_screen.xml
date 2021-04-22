@@ -5,41 +5,42 @@
     android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layoutDescription="@xml/fragment_main_screen_scene">
+    app:layoutDescription="@xml/fragment_main_screen_scene"
+    tools:showPaths="true">
 
-    <ImageView
+    <View
         android:id="@+id/iv_back_header"
         android:layout_width="match_parent"
-        android:layout_height="170dp"
+        android:layout_height="@dimen/back_header_start_size"
         android:background="@color/green"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/normal_margin"
-        android:layout_marginTop="60dp"
+        android:layout_marginStart="@dimen/default_margin"
+        android:fontFamily="@font/roboto_medium"
         android:gravity="center"
-        android:text="Поиск товаров"
+        android:text="@string/search_items"
         android:textColor="?attr/colorOnPrimary"
-        android:textSize="@dimen/large_text"
+        android:textSize="@dimen/extra_large_text"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/iv_back_header"
-        />
+        app:layout_constraintTop_toTopOf="@id/iv_back_header" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/search_card"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/search_card_margin"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="5dp"
         app:cardUseCompatPadding="true"
-        app:layout_constraintTop_toBottomOf="@id/tv_title"
         app:layout_constraintEnd_toStartOf="@id/btn_barcode"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title">
 
         <androidx.appcompat.widget.SearchView
             android:id="@+id/search_view"
@@ -54,8 +55,6 @@
         style="@style/Widget.App.Button.OutlinedButton.IconOnly"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="@dimen/normal_margin"
         android:background="@drawable/btn_round"
         android:src="@drawable/ic_baseline_qr_code_24"
         android:tint="@color/black"
@@ -64,6 +63,19 @@
         app:layout_constraintStart_toEndOf="@id/search_card"
         app:layout_constraintTop_toTopOf="@+id/search_card" />
 
+    <ImageButton
+        android:id="@+id/btn_search"
+        style="@style/Button.Green"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/green_rect"
+        android:padding="8dp"
+        android:src="@drawable/ic_baseline_search_24"
+        android:tint="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/search_card"
+        app:layout_constraintEnd_toEndOf="@id/search_card"
+        app:layout_constraintTop_toTopOf="@+id/search_card" />
 
 
     <androidx.cardview.widget.CardView
@@ -92,22 +104,20 @@
         android:id="@+id/nested_scroll"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/iv_back_header"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        app:layout_constraintTop_toBottomOf="@id/iv_back_header">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraint_nested"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
+            android:layout_height="match_parent">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_categories"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/normal_margin"
-                android:layout_marginTop="@dimen/default_margin"
+                android:layout_marginTop="@dimen/recycler_margin_top"
                 app:layout_constraintBottom_toTopOf="@id/tv_early_seen"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -120,13 +130,8 @@
 
             <TextView
                 android:id="@+id/tv_early_seen"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/default_margin"
-                android:layout_marginTop="48dp"
-                android:fontFamily="@font/roboto_black"
-                android:text="Недавно просмотренные"
-                android:textColor="@color/black"
+                style="@style/TextViewTitle"
+                android:text="@string/early_seen"
                 app:layout_constraintBottom_toTopOf="@id/rv_early_seen"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/rv_categories" />
@@ -135,8 +140,7 @@
                 android:id="@+id/rv_early_seen"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/normal_margin"
-                android:layout_marginTop="48dp"
+                android:layout_marginTop="@dimen/recycler_margin_top"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_early_seen"
@@ -146,13 +150,8 @@
 
             <TextView
                 android:id="@+id/tv_limited_offer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/default_margin"
-                android:layout_marginTop="48dp"
-                android:fontFamily="@font/roboto_black"
-                android:text="Предложение ограничено"
-                android:textColor="@color/black"
+                style="@style/TextViewTitle"
+                android:text="@string/limited_offer"
                 app:layout_constraintBottom_toTopOf="@id/rv_limited_offer"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/rv_early_seen" />
@@ -161,8 +160,7 @@
                 android:id="@+id/rv_limited_offer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/normal_margin"
-                android:layout_marginTop="48dp"
+                android:layout_marginTop="@dimen/recycler_margin_top"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_limited_offer"
@@ -172,13 +170,8 @@
 
             <TextView
                 android:id="@+id/tv_best_price"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/default_margin"
-                android:layout_marginTop="48dp"
-                android:fontFamily="@font/roboto_black"
-                android:text="Лучшая цена"
-                android:textColor="@color/black"
+                style="@style/TextViewTitle"
+                android:text="@string/best_price"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/rv_limited_offer" />
 
@@ -186,8 +179,7 @@
                 android:id="@+id/rv_best_price"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/normal_margin"
-                android:layout_marginTop="48dp"
+                android:layout_marginTop="@dimen/recycler_margin_top"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_best_price"
@@ -197,21 +189,11 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="?attr/actionBarSize"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/rv_best_price" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
-
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.motion.widget.MotionLayout>

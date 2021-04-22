@@ -1,4 +1,4 @@
-package ru.work.leruaexample
+package ru.work.leruaexample.data.item
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,8 +8,10 @@ import android.widget.TextView
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import ru.work.leruaexample.R
+import ru.work.leruaexample.data.category.CategoryElement
 
-class ItemAdapter(
+class ItemsAdapter(
 //    private val clickListener: OnRecyclerMovieClicked
 ) : ListAdapter<Item, ItemViewHolder>(ItemsDiffCallback()) {
 

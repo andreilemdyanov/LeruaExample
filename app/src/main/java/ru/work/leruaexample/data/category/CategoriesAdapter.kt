@@ -1,4 +1,4 @@
-package ru.work.leruaexample
+package ru.work.leruaexample.data.category
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,12 +8,11 @@ import android.widget.TextView
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import ru.work.leruaexample.R
 
 class CategoriesAdapter(
 //    private val clickListener: OnRecyclerMovieClicked
 ) : ListAdapter<CategoryElement, ViewHolder>(CategoriesDiffCallback()) {
-
-    fun isHeader(position: Int) = position == 0
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -85,15 +84,15 @@ sealed class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     }
 
     class Header(itemView: View) : ViewHolder(itemView) {
-        private val image = itemView.findViewById<ImageView>(R.id.iv_category_icon)
+        //        private val image = itemView.findViewById<ImageView>(R.id.iv_category_icon)
         private val title = itemView.findViewById<TextView>(R.id.tv_category_title)
 
         fun bind() {
 //            image.setImageResource(R.drawable.ic_baseline_list_24)
-            image.load(R.drawable.ic_baseline_list_24){
-                error(R.drawable.ic_baseline_error_24)
-                crossfade(true)
-            }
+//            image.load(R.drawable.ic_baseline_list_24){
+//                error(R.drawable.ic_baseline_error_24)
+//                crossfade(true)
+//            }
             title.text = "Каталог"
         }
     }

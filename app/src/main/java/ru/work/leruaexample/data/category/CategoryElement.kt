@@ -1,4 +1,4 @@
-package ru.work.leruaexample
+package ru.work.leruaexample.data.category
 
 sealed class CategoryElement {
     abstract val id: Int

@@ -1,4 +1,4 @@
-package ru.work.leruaexample
+package ru.work.leruaexample.data.item
 
 import android.graphics.Rect
 import android.view.View
@@ -15,9 +15,11 @@ class LinearSpacingItemDecoration(private val spacing: Int) : RecyclerView.ItemD
         when {
             parent.getChildLayoutPosition(view) == 0 -> {
                 outRect.right = spacing
+                outRect.left = spacing
             }
             parent.getChildLayoutPosition(view) == lastIndex -> {
                 outRect.left = spacing
+                outRect.right = spacing
             }
             else -> {
                 outRect.left = spacing
