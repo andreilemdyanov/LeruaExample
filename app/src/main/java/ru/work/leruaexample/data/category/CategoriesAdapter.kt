@@ -8,7 +8,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import coil.transform.RoundedCornersTransformation
 import ru.work.leruaexample.R
 
 class CategoriesAdapter(
@@ -34,7 +33,7 @@ class CategoriesAdapter(
             )
             Type.FOOTER.ordinal -> ViewHolder.Footer(
                 inflater.inflate(
-                    R.layout.view_holder_footer,
+                    R.layout.view_holder_category_footer,
                     parent,
                     false
                 )
@@ -59,7 +58,7 @@ class CategoriesAdapter(
     override fun getItemViewType(position: Int): Int {
         return when (position) {
             0 -> Type.HEADER.ordinal
-            itemCount-1 -> Type.FOOTER.ordinal
+            itemCount - 1 -> Type.FOOTER.ordinal
             else -> Type.CATEGORY.ordinal
         }
     }
@@ -104,7 +103,7 @@ sealed class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 //                error(R.drawable.ic_baseline_error_24)
 //                crossfade(true)
 //            }
-            title.text = "Каталог"
+//            title.text = "Каталог"
         }
     }
 
@@ -119,7 +118,7 @@ sealed class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 //                error(R.drawable.ic_baseline_error_24)
 //                crossfade(true)
 //            }
-            title.text = "Смотреть всё"
+//            title.text = "Смотреть всё"
         }
     }
 }

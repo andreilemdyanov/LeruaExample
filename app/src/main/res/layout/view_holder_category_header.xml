@@ -20,6 +20,7 @@
     <TextView
         android:id="@+id/tv_category_title"
         style="@style/CategoryTitle"
+        android:text="@string/catalog"
         app:layout_constraintEnd_toEndOf="@+id/iv_background"
         app:layout_constraintStart_toStartOf="@+id/iv_background"
         app:layout_constraintTop_toTopOf="@+id/iv_background"

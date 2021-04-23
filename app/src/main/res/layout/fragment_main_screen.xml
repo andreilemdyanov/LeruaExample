@@ -68,7 +68,7 @@
         style="@style/Button.Green"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="@dimen/normal_margin"
         android:background="@drawable/green_rect"
         android:paddingHorizontal="12dp"
         android:paddingVertical="8dp"
