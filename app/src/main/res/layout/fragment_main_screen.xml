@@ -48,6 +48,7 @@
             android:layout_height="match_parent"
             android:queryHint="Поиск"
             app:iconifiedByDefault="false"
+            app:queryBackground="@null"
             app:queryHint="@string/search"
             app:searchIcon="@null" />
 
