@@ -46,7 +46,10 @@
             android:id="@+id/search_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:queryHint="Поиск" />
+            android:queryHint="Поиск"
+            app:iconifiedByDefault="false"
+            app:queryHint="@string/search"
+            app:searchIcon="@null" />
 
     </androidx.cardview.widget.CardView>
 
